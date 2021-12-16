@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\memberController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\ChatController;
 use GuzzleHttp\Middleware;
 
 /*
@@ -20,6 +21,10 @@ use GuzzleHttp\Middleware;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/chat',[ChatController::class,"showData"]);
+
 Route::view('add','add');
 Route::post('add',[ProductController::class,"addData"]);
 Route::post('add_member',[memberController::class,"addMember"]);

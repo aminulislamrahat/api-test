@@ -23,6 +23,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
+Route::get('/chat', function () {
+    return view('chat');
+});
 
 
 Route::get('/', function () {
